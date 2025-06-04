@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int choice,settingorder;
+vector<pair<string,string>> list;
 map<int,map<string,string>> vocab =
 {
     {1,{
@@ -47,12 +48,27 @@ map<int,map<string,string>> vocab =
 void single()
 void all()
 {
-    for (const auto& pair : entries) cout << pair.first << " -> " << pair.second << '\n';
+    string ans;
+    for(const auto& fr:list) cout << fr.first << '\n';
+    cout << "Please put each output on a new line.\n";
+    for (auto& [fr,en] : list)
+    {
+        cout << "What is" << fr << "?\n";
+        cin >> ans;
+        transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+        string correct=en;
+        transform(correct.begin(), correct.end(), correct.begin(), ::tolower);
+        if (answer == correct) cout << "Correct!\n";
+        else
+        {
+            cout << "Incorrect.\nType 1 if you would like another try, \n Type 2 if you would like the answer," << english << "\n\n";
+        }
+    }
 }
 void run()
 {
-    vector<pair<string,string>> list;
-    for (const auto& s:vocab[1]) list.push_back(s);
+    list.clear()
+    for(const auto& s:vocab[1]) list.push_back(s);
     random_device rd;
     mt19937 g(rd());
     shuffle(list.begin() list.end(),g);
