@@ -44,7 +44,11 @@ map<int,map<string,string>> vocab =
         {"un gramme","a gram"}, {"un morceau","a piece"}, {"une tranche","a slice"}, {"un pot","a jar"}, {"une boîte","a can/box"}, {"une assiette","a plate"}, {"un couteau","a knife"},
         {"une fourchette","a fork"}, {"une cuillère à soupe","a tablespoon"}, {"une cuillère à café","a teaspoon"}, {"une tasse","a cup"}, {"un verre","a glass"}, {"une serviette","a napkin"}}},
 };
-void all 
+void single()
+void all()
+{
+    for (const auto& pair : entries) cout << pair.first << " -> " << pair.second << '\n';
+}
 void run()
 {
     vector<pair<string,string>> list;
@@ -55,6 +59,12 @@ void run()
     cout << "Type 1 if you would like all the vocab at once, Type 2 if you would like the vocab one by one.";
     cin >> settingorder;
     if(settingorder==1) all();
+    else if(settingorder==2) single();
+    else
+    {
+        cout << "Invalid. Please Retry.\n";
+        run();
+    }
 }
 void input()
 {
