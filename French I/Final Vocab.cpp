@@ -40,6 +40,7 @@ int main()
             {"Mes parents", "My parents"}, {"Mon ami", "My (male) friend"}, {"Mon amie", "My (female) friend"}, {"Mon frère", "My brother"}, {"Ma sœur", "My sister"},
             {"Mon chien", "My dog"}, {"Mon chat", "My cat"}, {"Mon animal domestique", "My pet"}, {"Mon animal de compagnie", "My companion animal"}}}
     };
-    cout << "You picked: #" << choice << "," << endl;
+    cout << "You picked: #" << choice << endl;
+    if(guess=)
     return 0;
 }
