@@ -45,6 +45,14 @@ map<int,map<string,string>> vocab =
         {"un gramme","a gram"}, {"un morceau","a piece"}, {"une tranche","a slice"}, {"un pot","a jar"}, {"une boîte","a can/box"}, {"une assiette","a plate"}, {"un couteau","a knife"},
         {"une fourchette","a fork"}, {"une cuillère à soupe","a tablespoon"}, {"une cuillère à café","a teaspoon"}, {"une tasse","a cup"}, {"un verre","a glass"}, {"une serviette","a napkin"}}},
 };
+void wrong()
+{
+    cout << "Incorrect.\nType 1 if you would like another try, \n Type 2 if you would like the answer,\n Type 3 if you have the correct answer and would like to override the system.\n *Please note this is similar to a First-Generation Dictionary and is HIGHLY case sensitive.\n";
+    int x;
+    cin >> x;
+    if(x==1) break;
+    
+}
 void single()
 void all()
 {
@@ -61,7 +69,10 @@ void all()
         if (answer == correct) cout << "Correct!\n";
         else
         {
-            cout << "Incorrect.\nType 1 if you would like another try, \n Type 2 if you would like the answer," << english << "\n\n";
+            cout << "Incorrect.\nType 1 if you would like another try, \n Type 2 if you would like the answer,\n Type 3 if you have the correct answer and would like to override the system.\n *Please note this is similar to a First-Generation Dictionary and is HIGHLY case sensitive.\n";
+            int x;
+            cin >> x;
+            if(x==1)
         }
     }
 }
