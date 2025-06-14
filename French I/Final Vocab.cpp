@@ -67,13 +67,7 @@ void all()
         string correct=en;
         transform(correct.begin(), correct.end(), correct.begin(), ::tolower);
         if (answer == correct) cout << "Correct!\n";
-        else
-        {
-            cout << "Incorrect.\nType 1 if you would like another try, \n Type 2 if you would like the answer,\n Type 3 if you have the correct answer and would like to override the system.\n *Please note this is similar to a First-Generation Dictionary and is HIGHLY case sensitive.\n";
-            int x;
-            cin >> x;
-            if(x==1)
-        }
+        else wrong();
     }
 }
 void run()
@@ -83,15 +77,6 @@ void run()
     random_device rd;
     mt19937 g(rd());
     shuffle(list.begin() list.end(),g);
-    cout << "Type 1 if you would like all the vocab at once, Type 2 if you would like the vocab one by one.";
-    cin >> settingorder;
-    if(settingorder==1) all();
-    else if(settingorder==2) single();
-    else
-    {
-        cout << "Invalid. Please Retry.\n";
-        run();
-    }
 }
 void input()
 {
