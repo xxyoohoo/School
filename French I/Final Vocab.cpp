@@ -50,8 +50,7 @@ void wrong()
     cout << "Incorrect.\nType 1 if you would like another try, \n Type 2 if you would like the answer,\n Type 3 if you have the correct answer and would like to override the system.\n *Please note this is similar to a First-Generation Dictionary and is HIGHLY case sensitive.\n";
     int x;
     cin >> x;
-    if(x==1) break;
-    
+    return x;
 }
 void single()
 void all()
@@ -67,7 +66,12 @@ void all()
         string correct=en;
         transform(correct.begin(), correct.end(), correct.begin(), ::tolower);
         if (answer == correct) cout << "Correct!\n";
-        else wrong();
+        else
+        {
+            if(wrong()==1)
+            {
+                
+        }
     }
 }
 void run()
